@@ -9,7 +9,7 @@ function Todo() {
     { id: uuid(), todoName: "work" },
     { id: uuid(), todoName: "sleep" },
   ]);
-  console.log(todoList);
+
   const handleChange = (evt) => {
     setTodoUpdate(evt.target.value);
   };
