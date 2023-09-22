@@ -5,10 +5,7 @@ import "./index.css";
 
 function Todo() {
   const [todoUpdate, setTodoUpdate] = useState("");
-  const [todoList, setTodoList] = useState([
-    { id: uuid(), todoName: "work" },
-    { id: uuid(), todoName: "sleep" },
-  ]);
+  const [todoList, setTodoList] = useState([]);
 
   const handleChange = (evt) => {
     setTodoUpdate(evt.target.value);
@@ -54,9 +51,11 @@ function Todo() {
           name="todoUpdate"
           value={todoUpdate}
         />
-        <button className="primary-btn" onClick={add}>Add</button>
+        <button className="primary-btn" onClick={add}>
+          Add
+        </button>
       </div>
-      
+
       <TodoRender todos={todoList} del={deleted} edit={edit} updated={update} />
     </div>
   );
