@@ -2,7 +2,8 @@
 
 Project Logo
 
-![Screenshot (62)](https://github.com/vanshvansh858/TodoList-Calendar/assets/91370040/c79a108b-466d-49f8-8a28-be22f1582f88)
+![image](https://github.com/vanshvansh858/TodoList-Calendar/assets/91370040/1f158811-b103-4aae-bdb3-e05e5dcdbe1a)
+
 
 Overview
 The ToDo List Calendar is a simple and user-friendly web application that combines a ToDo list and a calendar to help you manage your tasks and schedule effectively. Whether you need to organize your daily routine, plan events, or set reminders, this application has got you covered.
