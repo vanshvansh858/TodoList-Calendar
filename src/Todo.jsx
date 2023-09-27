@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import TodoRender from "./TodoRender";
 import "./index.css";
 
+const getInitialData = () => {
+  const data = JSON.parse(localStorage.getItem("todoList"));
+  if (!data) return [];
+  return data;
+};
+
 function Todo() {
   const [todoUpdate, setTodoUpdate] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(getInitialData);
+
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList]);
 
   const handleChange = (evt) => {
     setTodoUpdate(evt.target.value);
