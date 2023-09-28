@@ -2,9 +2,7 @@
 
 Project Logo
 
-![image](https://github.com/vanshvansh858/TodoList-Calendar/assets/91370040/9709a35a-53aa-47f5-8a02-a362d454577a)
-
-
+![image](https://github.com/vanshvansh858/TodoList-Calendar/assets/91370040/2afbb2fd-6bc7-4a72-ae52-026e12bfb03a)
 
 
 Overview
