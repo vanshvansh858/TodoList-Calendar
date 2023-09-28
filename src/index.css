@@ -55,10 +55,11 @@ h1 {
 .primary-btn {
   background-color: #00e67a;
   color: white;
-  border-radius: 20px;
+  border-radius: 18px;
   border: none;
   margin-top: 25px;
   padding: 10px;
+  margin-right: 5px;
   width: 60px;
   cursor: pointer;
 }
@@ -105,14 +106,14 @@ h1 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(4, 192, 104);
+  background-color: #414040;
   /* border-radius: calc(15px / 2); */
 }
 
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   /* border-radius: 10px; */
-  background-color: #414040;
+  background-color: #04c068;
 }
 
 /* jhbhjbjh */

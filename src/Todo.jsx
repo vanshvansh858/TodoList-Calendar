@@ -12,6 +12,7 @@ const getInitialData = () => {
 function Todo() {
   const [todoUpdate, setTodoUpdate] = useState("");
   const [todoList, setTodoList] = useState(getInitialData);
+  const [id, setId] = useState(null);
 
   useEffect(() => {
     localStorage.setItem("todoList", JSON.stringify(todoList));
@@ -29,11 +30,12 @@ function Todo() {
     }
   }
   function edit(id) {
+    setId(id);
     todoList.map((item) => {
       return item.id === id && setTodoUpdate(item.todoName);
     });
   }
-  function update(id) {
+  function update() {
     setTodoList((oldtodoList) => {
       return oldtodoList.map((item) => {
         if (item.id === id) {
@@ -43,6 +45,7 @@ function Todo() {
       });
     });
     setTodoUpdate("");
+    setId(null);
   }
   function deleted(id) {
     setTodoList((todo) => {
@@ -63,6 +66,9 @@ function Todo() {
         />
         <button className="primary-btn" onClick={add}>
           Add
+        </button>{" "}
+        <button className="primary-btn" onClick={update}>
+          Update
         </button>
       </div>
 

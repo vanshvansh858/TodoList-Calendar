@@ -1,7 +1,7 @@
 import TodoListItem from "./TodoListItem";
 import "./index.css";
 
-function TodoRender({ todos, del, edit, updated }) {
+function TodoRender({ todos, del, edit,}) {
   return (
     <div className="todo-input-item">
       {todos.map((td) => {
@@ -10,7 +10,6 @@ function TodoRender({ todos, del, edit, updated }) {
             <li >
               <TodoListItem value={td.todoName} />
               <button className="secondaryBtn" onClick={() => edit(td.id)}>Edit</button>
-              <button className="secondaryBtn" onClick={() => updated(td.id)}>Update</button>
               <button className="secondaryBtn" onClick={() => del(td.id)}>Delete</button>
             </li>
           </ul>
