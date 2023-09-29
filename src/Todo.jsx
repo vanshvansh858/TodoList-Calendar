@@ -1,37 +1,33 @@
-import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import TodoRender from "./TodoRender";
 import "./index.css";
 
-const getInitialData = () => {
-  const data = JSON.parse(localStorage.getItem("todoList"));
-  if (!data) return [];
-  return data;
-};
-
-function Todo() {
-  const [todoUpdate, setTodoUpdate] = useState("");
-  const [todoList, setTodoList] = useState(getInitialData);
-  const [id, setId] = useState(null);
-
-  useEffect(() => {
-    localStorage.setItem("todoList", JSON.stringify(todoList));
-  }, [todoList]);
-
+function Todo({
+  selectedDate,
+  todoUpdate,
+  setTodoUpdate,
+  setTodoList,
+  id,
+  setId,
+  filteredTodos,
+}) {
   const handleChange = (evt) => {
     setTodoUpdate(evt.target.value);
   };
   function add() {
     if (todoUpdate.trim() !== "") {
       setTodoList((oldtodoList) => {
-        return [...oldtodoList, { id: uuid(), todoName: todoUpdate }];
+        return [
+          ...oldtodoList,
+          { id: uuid(), todoName: todoUpdate, date: selectedDate },
+        ];
       });
       setTodoUpdate("");
     }
   }
   function edit(id) {
     setId(id);
-    todoList.map((item) => {
+    filteredTodos.map((item) => {
       return item.id === id && setTodoUpdate(item.todoName);
     });
   }
@@ -72,9 +68,13 @@ function Todo() {
         </button>
       </div>
 
-      <TodoRender todos={todoList} del={deleted} edit={edit} updated={update} />
+      <TodoRender
+        todos={filteredTodos}
+        del={deleted}
+        edit={edit}
+        updated={update}
+      />
     </div>
   );
 }
-
 export default Todo;
