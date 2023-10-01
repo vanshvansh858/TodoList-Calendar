@@ -4,6 +4,7 @@ import "./calendar.css";
 import Todo from "./Todo";
 import "./index.css";
 
+//to store data in local Storage
 function TodoCalendar() {
   const getInitialData = () => {
     const data = JSON.parse(localStorage.getItem("todoList"));
@@ -24,7 +25,7 @@ function TodoCalendar() {
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-
+  //filters the todoList and show them according ot the dates
   const filteredTodos = todoList.filter((todo) => {
     const todoDate = new Date(todo.date);
     const newDate = new Date(selectedDate);
